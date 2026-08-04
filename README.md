@@ -19,4 +19,24 @@ Nebula Sentinel is a platform developed in Rust that has been under active testi
 
 
 Threat detection and enrichment framework via agent inference:
+
 <img width="1380" height="1240" alt="image" src="https://github.com/user-attachments/assets/460a4751-fd80-498e-8a2f-848abbc717b7" />
+
+
+Autonomous Threat Cognition Capability Model:
+
+<img width="620" height="521" alt="image" src="https://github.com/user-attachments/assets/56a9714b-4bd6-4b7a-bf98-7f75a21d250a" />
+
+ATC 0 - Threat detection is performed via signatures and rules only (legacy mode).
+
+ATC 1 - Model explains event based on data, the concept of human-in-the-loop applies, where an individaul makes all decisions.
+
+ATC 2 - Partial Cognition. The model enriches and prioritizes events based on data; no autonomy.
+
+ATC 3 - Conditional autonomy, Human gated. Model reasoning and enrichment; response on deterministic signals only (confidence based).
+
+ATC 4 - High autonomy, Reasoning drives response in bounded domains, reasoning driven. It still under research and untrusted. 
+
+ATC 5 - Full autonomy. Reasoning drives response, no human gate. Fully automated ATC.
+
+ATR - Research frontier (ATC-4/ATC-5), partially built, untrusted, under research.
