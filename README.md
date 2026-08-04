@@ -17,3 +17,6 @@ Generative Observable Security Sharing Intelligence Protocol. While the idea has
 Reference implementation:
 Nebula Sentinel is a platform developed in Rust that has been under active testing for several months (March 2026). Inference on the agent has been successfully achieved, however, not without challenges. Some of the most notable challenges have been the fact that if the agent runs on a laptop, the battery is drained much faster (between 25-55%) compared to standard use. This is due to inference being expensive due to the amount of compute required. Both methods have been explored, CPU-based inference as well as GPU. CPU inference keeps the processor running well above 95% utilization, while GPU inference seems more stable. However, while running on battery, both methods are simply not ideal. For a workstation or server, the load seems more acceptable, as power is uninterrupted and compute seems more sustainable. This is the main finding when running ATC. A new angle is being explored and more will be published in the near future. 
 
+
+Threat detection and enrichment framework via agent inference:
+<img width="1380" height="1240" alt="image" src="https://github.com/user-attachments/assets/460a4751-fd80-498e-8a2f-848abbc717b7" />
