@@ -2,7 +2,7 @@
 Autonomous Threat Cognition: On-Device Language-Model Reasoning for Endpoint Threat Interpretation
 
 Abstract:
-The cybersecurity threat landscape is rapidly changing, with attackers leveraging Large Language Models to break into environments at machine speed. Most organizations, if not the industry, are actually focused on leveraging the cloud to perform inference and integrate cognition into workflows to try and keep up with the attackers. The main challenge of such integrations is the fact that the data must be accessible to frontier models and the cost of tokens could be significantly high. The cloud dependency, while not only costly, also requires breaking certain boundaries in terms of networks, data, trust, and privacy while attempting to operationalize security. Due to the fact that threats are moving at machine speed with the enhancement of large language models, the concept of moving the reasoning to the endpoint addresses requirements such as sovereign or air gap systems, while still taking advantage of cognition on the edge. This approach consists of leveraging an LLM or SLM closer to the data source, such as servers or endpoints, in an attempt to respond at machine speed and taking advantage of cognition.
+The cybersecurity threat landscape is rapidly changing, with attackers leveraging Large Language Models and tools moving at machine speed. Most organizations, if not the industry, are actually focused on leveraging the cloud to perform inference and integrate cognition into workflows to try and keep up with the attackers. The main challenge of such integrations is the fact that the data must be accessible to frontier models and the cost of tokens could be significantly high. The cloud dependency, while not only costly, also requires breaking certain boundaries in terms of networks, data, trust, and privacy while attempting to operationalize security. Due to the fact that threats are moving at machine speed with the enhancement of large language models, the concept of moving the reasoning to the endpoint addresses requirements such as sovereign or air gap systems, while still taking advantage of cognition on the edge. This approach consists of leveraging an LLM or SLM closer to the data source, such as servers or endpoints, in an attempt to respond at machine speed and taking advantage of cognition.
 
 What is Autonomous Threat Cognition?
 This term was developed during research into the feasibility of incorporating an inference engine into a cybersecurity agent monitoring events on a system, while also enriching analysis via LLM/SLM reasoning on such events and determining if the activity constitutes a threat or benign activity based on the collected and processed data. Autonomous Threat Cognition enables the machine or agent to autonomously collect, process, and produce enriched analysis via inference on the endpoint.
@@ -24,6 +24,8 @@ Threat detection and enrichment framework via agent inference:
 
 
 Autonomous Threat Cognition Capability Model:
+
+The Autonomous Threat Cognition capability model has been design to explain the different levels which the agent (sentinel) can operate. The spectrum covers from a traditional detection capability through a conceptual fully autonomous mode.
 
 <img width="620" height="521" alt="image" src="https://github.com/user-attachments/assets/56a9714b-4bd6-4b7a-bf98-7f75a21d250a" />
 
