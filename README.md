@@ -42,3 +42,9 @@ ATC 4 - High autonomy, Reasoning drives response in bounded domains, reasoning d
 ATC 5 - Full autonomy. Reasoning drives response, no human gate. Fully automated ATC.
 
 ATR - Research frontier (ATC-4/ATC-5), partially built, untrusted, under research.
+
+
+Agent Example:
+
+<img width="933" height="605" alt="image" src="https://github.com/user-attachments/assets/d1776eca-9946-40b0-90e7-94faa900b0fa" />
+
