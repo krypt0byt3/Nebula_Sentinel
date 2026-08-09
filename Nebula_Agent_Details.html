@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Configuration &amp; Deployment — Nebula Sentinel Docs</title>
+<style>
+:root{
+  --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --border:#2a3140;
+  --text:#c9d3e0; --muted:#8b98a9; --head:#e6edf5; --accent:#4db5e8;
+  --accent2:#1d9e75; --warn:#e0a33a; --danger:#e5654b; --code:#0b1017;
+  --link:#5cc2ef;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:15px/1.65 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+.layout{display:flex;min-height:100vh}
+/* Sidebar */
+.side{width:290px;flex:0 0 290px;background:var(--panel);border-right:1px solid var(--border);
+  position:sticky;top:0;height:100vh;overflow-y:auto;padding:22px 0}
+.brand{padding:0 22px 16px;border-bottom:1px solid var(--border);margin-bottom:12px}
+.brand .logo{font-size:18px;font-weight:700;color:var(--head);letter-spacing:.3px}
+.brand .logo span{color:var(--accent)}
+.brand .sub{font-size:11px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.8px}
+.navsec{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);
+  padding:14px 22px 6px;font-weight:600}
+.side a.navitem{display:block;padding:7px 22px;color:var(--text);font-size:13.5px;border-left:3px solid transparent}
+.side a.navitem:hover{background:var(--panel2);text-decoration:none}
+.side a.navitem.active{background:var(--panel2);border-left-color:var(--accent);color:var(--head)}
+/* Content */
+.content{flex:1;min-width:0;max-width:960px;margin:0 auto;padding:46px 54px 120px}
+.doc-meta{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+h1,h2,h3,h4{color:var(--head);line-height:1.25;font-weight:650}
+h1{font-size:30px;margin:.2em 0 .6em;padding-bottom:.35em;border-bottom:1px solid var(--border)}
+h2{font-size:22px;margin:1.7em 0 .5em;padding-bottom:.25em;border-bottom:1px solid var(--border)}
+h3{font-size:17.5px;margin:1.4em 0 .4em}
+h4{font-size:15px;margin:1.2em 0 .3em;color:var(--accent)}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em}
+li{margin:.25em 0}
+hr{border:none;border-top:1px solid var(--border);margin:2em 0}
+blockquote{margin:1em 0;padding:.6em 1.1em;border-left:3px solid var(--accent);
+  background:var(--panel);border-radius:0 6px 6px 0;color:var(--muted)}
+code{background:var(--code);padding:.12em .4em;border-radius:4px;font-size:.88em;
+  font-family:'SF Mono',ui-monospace,'Cascadia Code',Consolas,monospace;color:#a7d3ee}
+pre{background:var(--code);border:1px solid var(--border);border-radius:8px;padding:16px 18px;
+  overflow-x:auto;font-size:13px;line-height:1.5}
+pre code{background:none;padding:0;color:#cdd9e5}
+table{border-collapse:collapse;width:100%;margin:1.1em 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--border);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--head);font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.emoji{font-size:1.05em}
+/* callout coloring by leading emoji in list items handled inline */
+.topbar{display:none}
+@media(max-width:880px){
+  .side{position:fixed;left:-300px;transition:left .2s;z-index:50}
+  .side.open{left:0}
+  .content{padding:24px 20px 90px}
+  .topbar{display:flex;align-items:center;gap:12px;position:sticky;top:0;background:var(--panel);
+    border-bottom:1px solid var(--border);padding:12px 16px;z-index:40}
+  .menu-btn{background:var(--panel2);border:1px solid var(--border);color:var(--head);
+    border-radius:6px;padding:6px 12px;font-size:14px;cursor:pointer}
+}
+.footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);
+  color:var(--muted);font-size:12px}
+</style></head><body>
+<div class="topbar"><button class="menu-btn" onclick="document.querySelector('.side').classList.toggle('open')">☰ Menu</button>
+<strong>Configuration &amp; Deployment</strong></div>
+<div class="layout">
+<aside class="side"><div class="brand"><div class="logo">Nebula<span>Sentinel</span></div><div class="sub">Technical Documentation</div></div><nav><div class="navsec">Overview</div><a class="navitem" href="00_INDEX.html">System Overview</a><a class="navitem" href="01_architecture.html">Architecture &amp; Data Flow</a><div class="navsec">Agent</div><a class="navitem" href="agent__01_core_config.html">Core &amp; Configuration</a><a class="navitem" href="agent__02_detection_behavioral.html">Detection — Behavioral</a><a class="navitem" href="agent__03_detection_content_rules.html">Detection — Files &amp; Rules</a><a class="navitem" href="agent__04_network.html">Network Defense</a><a class="navitem" href="agent__05_response_posture.html">Response, Posture &amp; Hardening</a><a class="navitem" href="agent__06_collection_forensics.html">Collection &amp; Forensics</a><a class="navitem" href="agent__07_llm_gossip.html">Embedded LLM &amp; GOSSIP</a><div class="navsec">Nexus</div><a class="navitem" href="nexus__01_api_auth.html">Core, API &amp; Auth</a><a class="navitem" href="nexus__02_intel_rules.html">Intel, Rules &amp; Synthesis</a><a class="navitem" href="nexus__03_compliance_reporting.html">Compliance &amp; Reporting</a><div class="navsec">Gossip</div><a class="navitem" href="gossip__01_protocol.html">GOSSIP Protocol &amp; Signing</a><div class="navsec">Security</div><a class="navitem" href="90_SECURITY_MODEL.html">Security Model</a><div class="navsec">Operations</div><a class="navitem active" href="91_CONFIGURATION.html">Configuration &amp; Deployment</a></nav></aside>
+<main class="content">
+  <div class="doc-meta">Operations</div>
+<h1 id="configuration-deployment-reference">Configuration &amp; Deployment Reference</h1>
+<blockquote><p>The authoritative, current reference for configuring and running NebulaSentinel after the fix + security-hardening releases. Covers ports, the Nexus environment file, <code>nexus.toml</code>, the agent config, agent↔Nexus key matching, and every recently-added knob. See also <strong><a href="91_SECURITY_REVIEW.html">Security Review &amp; Hardening</a></strong> for <em>why</em> the fail-closed requirements exist.</p></blockquote>
+<h2 id="ports-processes">Ports &amp; processes</h2>
+<table><thead><tr><th>Port</th><th>Component</th><th>Purpose</th><th>Auth</th></tr></thead><tbody><tr><td><code>9443</code></td><td>Nexus</td><td><strong>ATC</strong> — agents send telemetry / poll commands</td><td><strong>API key</strong> (<code>X-Api-Key</code>) + TLS; optional mTLS</td></tr><tr><td><code>8443</code></td><td>Nexus</td><td>Operator UI / management API (~150 routes)</td><td>JWT + <strong>RBAC</strong> (admin for <code>/api/*</code> writes)</td></tr><tr><td><code>7440</code></td><td>Agent</td><td>Local read-only status dashboard</td><td>localhost only</td></tr><tr><td><code>9999</code></td><td>Agent</td><td>GOSSIP peer mesh (UDP)</td><td>optional AES-256-GCM PSK</td></tr></tbody></table>
+<h2 id="nexus-required-configuration">Nexus — required configuration</h2>
+<h3 id="etcnexusenvironment-secrets"><code>/etc/nexus/environment</code> (secrets)</h3>
+<p>The Nexus <strong>loads this file itself at startup</strong> (also loaded by systemd via <code>EnvironmentFile=</code>). Format is <code>KEY=value</code>, one per line; single/double quotes are stripped; <code>#</code> comments ignored. Existing env vars are never overridden. Override the path with <code>NEXUS_ENV_FILE</code>.</p>
+<table><thead><tr><th>Variable</th><th>Required</th><th>Purpose</th></tr></thead><tbody><tr><td><code>NEXUS_JWT_SECRET</code></td><td><strong>Yes</strong></td><td>Signs session JWTs. ≥32 bytes, not the placeholder — <strong>the Nexus refuses to boot otherwise.</strong></td></tr><tr><td><code>NEXUS_API_MASTER_KEY</code></td><td><strong>Yes</strong></td><td>ATC agent-channel key (port 9443). Must be non-placeholder — <strong>fail-closed.</strong> Overrides <code>api_master_key</code> in <code>nexus.toml</code>.</td></tr><tr><td><code>NEXUS_ADMIN_PASSWORD</code></td><td>No</td><td>Initial admin password. If unset, a <strong>random</strong> password is generated and printed <strong>once</strong> to stdout (never logged).</td></tr><tr><td><code>NEXUS_DB_ENCRYPTION_KEY</code></td><td>No</td><td>64-hex (32-byte) AES-256-GCM key; when set, TOTP secrets are encrypted at rest.</td></tr><tr><td><code>NEBULA_LLM_API_KEY</code> / <code>ANTHROPIC_API_KEY</code> / <code>OPENAI_API_KEY</code> / …</td><td>No</td><td>LLM provider key (only if using a cloud provider).</td></tr><tr><td><code>NEXUS_LDAP_BIND_PW</code></td><td>No</td><td>LDAP service-account password (if <code>[auth]</code> uses LDAP).</td></tr><tr><td><code>NVD_API_KEY</code></td><td>No</td><td>Speeds up NVD CVE ingestion.</td></tr></tbody></table>
+<p>Generate any key with: <code>openssl rand -base64 48</code></p>
+<p><strong>Two fail-closed checks</strong> (both must be satisfied or the Nexus exits at startup):</p>
+<ol><li><code>NEXUS_JWT_SECRET</code> set, ≥32 bytes, ≠ placeholder.</li><li>ATC key (<code>NEXUS_API_MASTER_KEY</code> <strong>or</strong> top-level <code>api_master_key</code> in <code>nexus.toml</code>) ≠ unset/placeholder.</li></ol>
+<h3 id="nexustoml-non-secret-settings"><code>nexus.toml</code> (non-secret settings)</h3>
+<p>Top-level fields (before any <code>[section]</code> — a top-level key placed under a section like <code>[llm]</code> becomes <code>llm.api_master_key</code> and is ignored):</p>
+<pre><code># api_master_key = "..."     # prefer NEXUS_API_MASTER_KEY in the env file instead
+db_path          = "/var/lib/nexus/nexus.db"
+bind_addr        = "0.0.0.0"
+atc_port         = 9443
+mgmt_port        = 8443
+self_signed_cert = true       # auto-generate a self-signed cert on first run
+require_agent_cert = false    # set true + agent_ca_cert_path for mTLS on 9443
+tls_san = []                  # extra cert SAN names/IPs (see TLS pinning below)
+gossip_require_signed = false # true = reject GOSSIP envelopes that fail signature
+                              #        verification (turn on once the fleet is fully
+                              #        updated; agents sign automatically)
+
+[llm]   # provider, model, endpoints
+[auth]  # provider (local/ldap/oidc), role mappings, session hours</code></pre>
+<h2 id="llm-inference-multi-gpu-nexus">LLM inference &amp; multi-GPU (Nexus)</h2>
+<p>The Nexus server-side LLM (which powers <strong>Whisper</strong>) runs, by default, a managed local <code>llama-server</code> process. GPU behavior is set in <code>nexus.toml</code> under <code>[llm]</code>:</p>
+<pre><code>[llm]
+provider     = "llamacpp"     # managed local llama-server (default)
+n_gpu_layers = -1             # -1 = offload all layers to GPU, 0 = CPU only
+# ── Multi-GPU (needs a CUDA/HIP-built llama-server) ──
+split_mode   = "layer"        # "layer" (spread layers across all GPUs) | "row" | "none" (single GPU)
+tensor_split = "0.5,0.5"      # per-GPU proportion (e.g. two equal GPUs); omit = VRAM-proportional
+main_gpu     = 0              # primary GPU for small tensors / KV cache</code></pre>
+<ul><li><strong>Automatic:</strong> with a CUDA/HIP-built <code>llama-server</code> and multiple GPUs visible, llama.cpp already <strong>layer-splits across all of them</strong> by default — you don't have to set anything. Use <code>CUDA_VISIBLE_DEVICES</code> to limit which GPUs are used.</li><li><strong>Tunable:</strong> <code>split_mode</code> / <code>tensor_split</code> / <code>main_gpu</code> let you control the split; unset fields fall back to llama.cpp defaults. These flags are ignored on a CPU-only build. They're also settable from the UI under <strong>Settings → LLM</strong> (Multi-GPU) — the UI writes them into <code>nexus.toml</code>.</li><li><strong>Hot-reload:</strong> saving LLM settings from <strong>Settings → LLM</strong> (or <code>PATCH /api/settings/llm</code>) applies them <strong>live</strong> for the managed <code>llama-server</code> — model, <code>n_gpu_layers</code>, and the multi-GPU knobs restart the local server in place, no Nexus restart. Switching the <code>provider</code> to/from an external backend (<code>vllm</code>/<code>ollama</code>/cloud) still needs a Nexus restart; the API response's <code>hot_reloaded</code> flag tells you which happened.</li><li><strong>External servers:</strong> set <code>provider = "vllm"</code> / <code>"ollama"</code> (or any OpenAI-compatible endpoint) to delegate to a server you run — e.g. <strong>vLLM <code>--tensor-parallel-size N</code></strong> for true tensor parallelism — where multi-GPU is that server's concern.</li></ul>
+<h2 id="agent-configuration-etcnebulaconfigtoml">Agent — configuration (<code>/etc/nebula/config.toml</code>)</h2>
+<pre><code>mode = "detect"                 # detect | protect | audit  (see Core Lifecycle)
+virustotal_api_key = "..."      # optional; enables VirusTotal reputation (off if unset)
+
+[collector]
+# Alert deduplication (noise reduction). Identical alerts — same threat name +
+# MITRE techniques + process — that fire repeatedly within the window are
+# suppressed at the source; the alert re-emits after the window with a
+# "recurred N×" note. Skips the full downstream cascade for duplicates.
+dedup_enabled           = true  # default on; false = forward every firing
+deduplicate_window_secs = 60    # suppression window in seconds (0 also disables)
+
+# ── Detection-time allowlist / suppression ──
+# Known-good matches are dropped or downgraded BEFORE any response, forensics,
+# dedup, or Nexus forwarding. A rule matches only when EVERY specified field
+# matches (unspecified = wildcard); an all-empty rule is ignored. Fields
+# process/path/threat_name are globs (`*`), case-insensitive; technique is an
+# exact MITRE id that must be present on the threat.
+[[detection.suppress]]
+process     = "MsMpEng.exe"      # Windows Defender scanner
+action      = "drop"             # "drop" (discard) | "downgrade" (force Info)
+reason      = "known AV scanner"
+
+[[detection.suppress]]
+path        = "/opt/backup/*"    # approved backup agent tree
+technique   = "T1005"            # only when flagged for data-from-local-system
+action      = "downgrade"
+reason      = "scheduled backup, expected file access"
+
+[nexus]
+url         = "https://&lt;nexus-host&gt;:9443"
+api_key     = "&lt;MUST EQUAL the Nexus NEXUS_API_MASTER_KEY&gt;"
+tls_verify  = true
+ca_cert_path = "/etc/nebula/certs/nexus.pem"   # pin the Nexus cert (recommended)
+
+[rules]
+auto_reload         = true      # hot-reload rule dirs without restart
+reload_interval_secs = 300
+
+[forensics]
+encrypt_artifacts  = true
+encryption_key_hex = "..."      # optional 64-hex AES-256-GCM key (else machine-derived)
+
+[gossip]
+enabled        = true
+port           = 9999
+encryption     = false          # off by default; set true AND encryption_key to encrypt the mesh
+encryption_key = "..."          # 64-hex PSK, same on all peers (required for encryption; else plaintext)</code></pre>
+<h3 id="agent-nexus-key-matching-common-first-run-gotcha">Agent ↔ Nexus key matching (common first-run gotcha)</h3>
+<p>The agent's <code>[nexus] api_key</code> <strong>must exactly equal</strong> the Nexus's <code>NEXUS_API_MASTER_KEY</code>. If they differ, the agent gets <strong>401 on port 9443</strong> (that's the ATC auth working as intended).</p>
+<h3 id="tls-pinning">TLS pinning</h3>
+<p>The default Nexus cert is self-signed. Point the agent's <code>[nexus] ca_cert_path</code> at the Nexus's cert PEM to <strong>pin</strong> it (trusts only that cert; rejects anything else). If you can't pin, set <code>tls_verify = false</code> explicitly (logged, lab-only).</p>
+<p><strong>Hostname/SAN must match.</strong> With <code>tls_verify = true</code>, the hostname in the agent's <code>[nexus] url</code> must appear in the Nexus cert's SAN. The auto-generated cert covers <code>nexus</code>, <code>localhost</code>, <code>127.0.0.1</code>, the Nexus's <strong>system hostname</strong>, and a concrete <code>bind_addr</code> automatically. If agents connect by any other name/IP (e.g. <code>nexus.corp.local</code>), add it to the Nexus config and <strong>regenerate the cert</strong>:</p>
+<pre><code># nexus.toml (top-level)
+tls_san = ["nexus.corp.local", "10.0.0.5"]</code></pre>
+<pre><code>rm /var/lib/nexus/certs/nexus.crt   # force regeneration on next start
+# then restart the Nexus and copy the new cert to agents' ca_cert_path</code></pre>
+<p>Symptom of a mismatch: the agent log shows a TLS <code>NotValidForName</code>/<code>certificate</code> error and the 7440 UI shows Nexus <strong>Offline</strong> (amber). Note that "Offline" (configured Nexus unreachable) and "Standalone" (no Nexus configured) are both normal states — the agent keeps detecting locally and the dashboard shows live standalone telemetry (rules, IOCs, LLM, collector, posture) either way.</p>
+<h2 id="gossip-mesh-encryption-key">GOSSIP mesh encryption key</h2>
+<p>The agent↔agent GOSSIP mesh (UDP :9999) is encrypted with a shared AES-256-GCM PSK. You don't have to configure anything for a fleet — it works out of the box:</p>
+<ul><li><strong>Default (fleet):</strong> on first request the <strong>Nexus generates a fleet PSK</strong>, persists it (<code>settings.gossip_psk</code>), and hands it to each agent over the authenticated, TLS-pinned ATC channel (<code>GET /api/atc/gossip/key</code>). All agents converge on the same key and the mesh is encrypted automatically.</li><li><strong>Custom fleet key (Nexus):</strong> set <code>NEXUS_GOSSIP_KEY</code> in <code>/etc/nexus/environment</code> to pin a key you control (not persisted; overrides the generated one): ``<code>bash # generate a 32-byte (64-hex) key openssl rand -hex 32 # /etc/nexus/environment NEXUS_GOSSIP_KEY='&lt;64 hex chars&gt;' </code>``</li><li><strong>Custom per-agent key:</strong> set <code>[gossip].encryption_key</code> in the agent config. A local key <strong>always wins</strong> — the agent skips the Nexus fetch. Use this for standalone agents (no Nexus) or to segment a subset of peers onto their own key. All peers that must talk to each other need the <strong>same</strong> key.</li><li><strong>Standalone agents</strong> (no Nexus) are plaintext unless you set a local <code>[gossip].encryption_key</code>.</li></ul>
+<p>Rotate by changing <code>NEXUS_GOSSIP_KEY</code> (or <code>settings.gossip_psk</code>) and restarting agents; all peers must share the new key simultaneously.</p>
+<h2 id="operating-modes-agent">Operating modes (agent)</h2>
+<p><code>detect</code> (default — logs the response it <em>would</em> take) · <code>protect</code> (active enforcement; destructive playbook/response actions run only here) · <code>audit</code> (silent log-only) · <strong>Legacy</strong> (automatic fallback when the embedded LLM fails to load — detection continues, AI enrichment skipped). Full detail in <strong><a href="agent__01_core_lifecycle.html">Core Lifecycle</a></strong>.</p>
+<h2 id="building">Building</h2>
+<p>Non-workspace multi-crate repo — build each crate separately (a C++ toolchain is needed for the agent's default embedded llama.cpp):</p>
+<pre><code>cd /nebulasentinel/nexus-server &amp;&amp; cargo build --release
+cd /nebulasentinel/nebula-agent &amp;&amp; cargo build --release
+# Agent without the embedded LLM (no C++ toolchain):
+#   cargo build --release --no-default-features --features ebpf-stub,inventory,gossip</code></pre>
+<h2 id="launch">Launch</h2>
+<ul><li><strong>systemd</strong> — ensure the Nexus unit has <code>EnvironmentFile=/etc/nexus/environment</code>, then <code>sudo systemctl daemon-reload &amp;&amp; sudo systemctl restart nexus</code>.</li><li><strong>Directly</strong> — the Nexus self-loads <code>/etc/nexus/environment</code>, so <code>./nexus-server</code> works; or source it into your shell first: <code>set -a; . /etc/nexus/environment; set +a</code>.</li></ul>
+<h2 id="first-run-checklist">First-run checklist</h2>
+<ol><li><code>openssl rand -base64 48</code> → set <code>NEXUS_JWT_SECRET</code> and <code>NEXUS_API_MASTER_KEY</code> in <code>/etc/nexus/environment</code>.</li><li>(Optional) <code>NEXUS_ADMIN_PASSWORD</code>, <code>NEXUS_DB_ENCRYPTION_KEY</code>.</li><li>Build + start the Nexus; note the generated admin password if you didn't set one.</li><li>On each agent, set <code>[nexus] url</code>, <code>api_key</code> (= <code>NEXUS_API_MASTER_KEY</code>), and <code>ca_cert_path</code> (pin the Nexus cert).</li><li>Start agents in <code>detect</code> mode; move to <code>protect</code> once tuned.</li></ol>
+  <div class="footer">Nebula Sentinel — source-level technical documentation · fix release 2026-08-07.</div>
+</main>
+</div></body></html>
